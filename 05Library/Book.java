@@ -13,6 +13,16 @@ public class Book{
 	title = t;
 	ISBN = i;
     }
+
+    public String getAuthor(){
+	return author;
+    }
+
+    public String getTitle(){
+	return title;
+    }
+
+    
 }
 	    
 	    
