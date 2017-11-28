@@ -2,12 +2,8 @@ public class Book{
     
     private String author;
     private String title;
-    private int ISBN;
+    private String ISBN;
 
-    public Book(){
-	
-    }
-
-    public Book(String a, 
+    
 }
 	
