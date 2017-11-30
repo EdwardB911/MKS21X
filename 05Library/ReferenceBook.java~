@@ -1,0 +1,12 @@
+public class ReferenceBook extends LibraryBook{
+
+    private String collection;
+
+    public ReferenceBook(String a,String t,String i,String c,String co){
+	super(a,t,i,c);
+	collection = co;
+    }
+
+    public String getCollection(){
+	return collection;
+    }
