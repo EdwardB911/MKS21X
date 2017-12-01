@@ -20,7 +20,7 @@ public class ReferenceBook extends LibraryBook{
     }
 
     public void returned(){
-	throw new UnsopportedOperationException("reference book could not have been checked out -- return impossible");
+	throw new UnsupportedOperationException("reference book could not have been checked out -- return impossible");
     }
 
     public String circulationStatus(){
