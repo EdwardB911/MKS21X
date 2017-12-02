@@ -39,7 +39,7 @@ public class Book{
     }
 
     public String toString(){
-	return "" + this.getAuthor() + this.getTitle() + this.getISBN();
+	return "" + this.getAuthor() + " " + this.getTitle() + " " + this.getISBN();
     }
 
     
