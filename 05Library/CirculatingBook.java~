@@ -1,0 +1,16 @@
+public class CirculatingBook extends LibraryBook{
+
+    private String currentHolder;
+    private String dueDate;
+
+    public LibraryBook(String a, String t, String i, String c){
+	super(a,t,i,c);
+	currentHolder = null;
+	dueDate = null;
+    }
+
+    public String getCurrentHolder(){
+	return currentHolder;
+    }
+
+    public String 
