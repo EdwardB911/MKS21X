@@ -1,0 +1,20 @@
+public class Barcode{
+
+    private String Zip;
+
+    public Barcode(String str){
+	Zip = str;
+    }
+
+    public String getZip(){
+	return Zip;
+    }
+
+    private String checkSum(){
+	int sum = 0
+	for(char x: Zip){
+	    sum = sum + Integer.parseInt(x);
+	}
+	return sum % 10;
+    }
+	    
