@@ -181,7 +181,7 @@ public class SuperArray implements Iterable<String>{
     }
 
     public Iterator<String> iterator(){
-	return new SuperArrayIterator(0,size());
+	return new SuperArrayIterator(0,size() - 1 );
     }
 
     public class SuperArrayIterator implements Iterator<String>{
