@@ -1,4 +1,6 @@
-public class SuperArray{
+import java.util.*;
+
+public class SuperArray implements Iterable<String>{
     
     private String[] data;
     private int size;    
@@ -178,7 +180,35 @@ public class SuperArray{
 	return false;
     }
 
-   				    
-			
+    public Iterator<String> iterator(){
+	return new SuperArrayIterator(0,size());
+    }
+
+    public class SuperArrayIterator implements Iterator<String>{
+
+	private int current;
+	private int end;
+
+	public SuperArrayIterator(int min, int max){
+	    current = min;
+	    end = max;
+	}
+
+	public boolean hasNext(){
+	    return (current <= end);
+	}
+
+	public String next(){
+	    if(hasNext()){
+		current = current + 1;
+	    }
+	    else{
+		System.exit(0);
+	    }
+	    return data[current - 1];
+	}
+    }
+		
+    		
 }
 		
