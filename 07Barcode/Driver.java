@@ -6,7 +6,7 @@ public class Driver{
     Barcode d = new Barcode("00294");
 
     System.out.println(a.getZip());//11245
-    System.out.println(d.getZip());//00234
+    System.out.println(d.getZip());//00294
     System.out.println(a.getCode());// |:::||:::||::|:|:|::|:|:|:::||:|
     System.out.println(a.toString());// |:::||:::||::|:|:|::|:|:|:::||:| (11245)
     System.out.println(b);// |::||:|::|:|:::|:||::||::::|::|| (38760)
