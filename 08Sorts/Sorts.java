@@ -71,7 +71,7 @@ public class Sorts{
                                                                                          
         System.out.println(Arrays.toString(randish));                               
 
-        selectionSort(randish);                                                 
+        insertionSort(randish);                                                 
 
         System.out.println(Arrays.toString(randish));                               
 
@@ -92,7 +92,14 @@ public class Sorts{
     
 
     public static void insertionSort(int[] ary){
-	for(int x = 0; start < ary.length; start++){
+	for(int x = 1; x < ary.length; x++){
+	    for (int y = x; y > 0; y--){
+		if(ary[y] < ary[y-1]){
+		    swap(ary, y-1, y);
+		}
+	    }
+	}
+    }
 		
 
     
