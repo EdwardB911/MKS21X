@@ -71,7 +71,7 @@ public class Sorts{
                                                                                          
         System.out.println(Arrays.toString(randish));                               
 
-        insertionSort(randish);                                                 
+        bubbleSort(randish);                                                 
 
         System.out.println(Arrays.toString(randish));                               
 
@@ -97,6 +97,21 @@ public class Sorts{
 		if(ary[y] < ary[y-1]){
 		    swap(ary, y-1, y);
 		}
+	    }
+	}
+    }
+
+    public static void bubbleSort(int[] ary){
+	for(int x = 0; x < ary.length - 1; x++){
+	    boolean noswaps = true;
+	    for(int y = 0; y < ary.length - 1; y++){
+		if(ary[y] > ary[y+1]){
+		    swap(ary, y, y+1);
+		    noswaps = false;
+		}
+	    }
+	    if(noswaps){
+		x = ary.length;
 	    }
 	}
     }
