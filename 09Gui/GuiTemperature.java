@@ -27,5 +27,17 @@ public class GuiTemperature extends JFrame{
 	pane.setLayout(new FlowLayout());
 
 	t = new JTextField(12);
+	CtoF = new JButton("CtoF");
+	FtoC = new JButton("FtoC");
 
+	pane.add(t);
+	pane.add(CtoF);
+	pane.add(FtoC);
+    }
+
+    public static void main(String[] args){
+	GuiTemperature g = new GuiTemperature();
+	g.setVisible(true);
+    }
+}
     
