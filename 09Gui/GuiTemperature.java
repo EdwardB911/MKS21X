@@ -44,10 +44,10 @@ public class GuiTemperature extends JFrame implements ActionListener{
 	String s = e.getActionCommand();
 	System.out.println(s);
 	if(s.equals("CtoF")){
-	    t.setText("" + CtoF(Double.parseDouble(t.getText())));
+	    t.setText(Double.toString(CtoF(Double.parseDouble(t.getText()))));
 	}
 	if(s.equals("FtoC")){
-	    t.setText("" + FtoC(Double.parseDouble(t.getText())));
+	    t.setText(Double.toString(FtoC(Double.parseDouble(t.getText()))));
 	}
     }
 
