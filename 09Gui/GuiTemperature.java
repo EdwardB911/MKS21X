@@ -1,7 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class GuiTemperature extends JFrame{
+public class GuiTemperature extends JFrame implements ActionListener{
 
     private Container pane;
     private JTextField t;
@@ -27,5 +28,32 @@ public class GuiTemperature extends JFrame{
 	pane.setLayout(new FlowLayout());
 
 	t = new JTextField(12);
+	CtoF = new JButton("CtoF");
+	FtoC = new JButton("FtoC");
 
+	t.addActionListener(this);
+	CtoF.addActionListener(this);
+	FtoC.addActionListener(this);
+
+	pane.add(t);
+	pane.add(CtoF);
+	pane.add(FtoC);
+    }
+
+    public void actionPerformed(ActionEvent e){
+	String s = e.getActionCommand();
+	System.out.println(s);
+	if(s.equals("CtoF")){
+	    t.setText(Double.toString(CtoF(Double.parseDouble(t.getText()))));
+	}
+	if(s.equals("FtoC")){
+	    t.setText(Double.toString(FtoC(Double.parseDouble(t.getText()))));
+	}
+    }
+
+    public static void main(String[] args){
+	GuiTemperature g = new GuiTemperature();
+	g.setVisible(true);
+    }
+}
     
