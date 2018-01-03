@@ -15,7 +15,10 @@ public class OrderedSuperArray extends SuperArray{
 	}
     }
 
-    private int chooseIndex(String str){
+    public String set(int index, String element){
+	throw new UnsupportedOperationException()
+
+    public int findIndex(String str){
 	int result = 0;
 	for (int x = 0; x < size(); x++){
 	    if(result == 0 && str.compareTo(data()[x]) < 0){
@@ -25,10 +28,12 @@ public class OrderedSuperArray extends SuperArray{
 	return result;
     }
 
-    private int chooseIndexBinary(String str){
+    public int findIndexBinary(String str){
+	if(size() == 0){
+	    return 0;
+	}		
 	int split = (size() - 1) / 2;
-	int result = split;
-	int max = size();
+	int max = size() - 1;
 	int min = 0;
 	for(int x = 0; (x < (Math.log(size())/Math.log(2))) && max != min; x++){
 	    if (str.compareTo(data()[x]) < 0){
@@ -52,8 +57,58 @@ public class OrderedSuperArray extends SuperArray{
      }
     
     public boolean add(String value){
-	add(chooseIndex(value), value);
+	if (size() == findIndexBinary(value)){
+	    super.add(value);
+	}		
+	super.add(findIndexBinary(value), value);
 	return true;
     }
+
+    public int indexOfBinary(String element){
+	if (this.contains(element)){
+		int split = (size() - 1) / 2;
+		int min = 0;
+		int max = size() - 1;
+		for(int x = 0; (x < (Math.log(size())/Math.log(2))) && max != min; x++){
+		    if (element.compareTo(data()[x]) > 0){
+			min = split + 1;
+		    }
+		    else{
+			max = split;
+		    }
+		    split = (min + max) / 2;
+		}
+		return split;
+	    }
+	else{
+	    return -1;
+	}
+    }
+
+    public int lastIndexOfBinary(String element){
+		if (this.contains(element)){
+		    int split = (size() - 1) / 2;
+		    int min = 0;
+		    int max = size() - 1;
+		    for(int x = 0; (x < (Math.log(size())/Math.log(2))) && max != min; x++){
+			if (element.compareTo(data()[x]) < 0){
+			    max = split - 1;
+			}
+			else{
+			    min = split;
+			}
+			split = (min + max) / 2;
+		    }
+		    return split;
+		}
+		else{
+		    return -1;
+		}
+    }   
+    
 }
+		
+    
+
+		    
 	    

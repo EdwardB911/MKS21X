@@ -2,10 +2,6 @@ import java.util.*;
 
 public class runTest02{
 
-public static void main(String[] args){
-    
-	
-
 public static void runTest02(int testID){
   
   if(testID<0){

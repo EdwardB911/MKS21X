@@ -1,6 +1,3 @@
-import java.util.*;
-
-public class runTest02{
 
 public static void runTest02(int testID){
   
@@ -110,4 +107,3 @@ public static boolean equals(OrderedSuperArray s, ArrayList<String> a){
     }
     return false;
   }
-}
